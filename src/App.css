@@ -2,9 +2,13 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: rgb(2,0,36);
+    background-image: url(./assets/fondo.jpg);
+
 }
 
 .main{
     flex-grow: 1;
+}
+.inputs{
+    background-color: rgb(187, 108, 108);
 }

@@ -1,22 +1,27 @@
 import { Form, Button } from "react-bootstrap";
 import ListaTareas from "./ListaTareas";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const FormularioTareas = () => {
-
+const FormularioTarea = () => {
+  const tareasDelLocalStorage =
+    JSON.parse(localStorage.getItem("listaTareas")) || [];
   const [tarea, setTarea] = useState("");
-  const [tareas, setTareas] = useState([]);
+  const [tareas, setTareas] = useState(tareasDelLocalStorage);
 
-  const handleSubmit = (e) =>{
+  useEffect(() => {
+    localStorage.setItem("listaTareas", JSON.stringify(tareas));
+  }, [tareas]);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setTareas([...tareas,tarea]);
-    //limpio input 
-    setTarea('');
-  }
-const borrarTarea =(nombreTarea)=>{
-    let copiaTareas = tareas.filter((itemTarea)=>itemTarea!== nombreTarea)
-setTareas(copiaTareas);
-}
+    setTareas([...tareas, tarea]);
+    setTarea("");
+  };
+
+  const borrarTarea = (nombreTarea) => {
+    let copiaTareas = tareas.filter((itemTarea) => itemTarea !== nombreTarea);
+    setTareas(copiaTareas);
+  };
 
   return (
     <>
@@ -24,12 +29,12 @@ setTareas(copiaTareas);
         <Form.Group className="mb-3 d-flex" controlId="tarea">
           <Form.Control
             type="text"
-            placeholder="Ingrese una tarea"
+            placeholder="ingrese una tarea"
             onChange={(e) => setTarea(e.target.value)}
             value={tarea}
           />
-          <Button type="submit" variant="warning" className="ms-2">
-            +
+          <Button variant="primary" type="submit" className="ms-2">
+            Agregar
           </Button>
         </Form.Group>
       </Form>
@@ -38,4 +43,4 @@ setTareas(copiaTareas);
   );
 };
 
-export default FormularioTareas;
+export default FormularioTarea;
