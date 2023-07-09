@@ -12,3 +12,4 @@ const ItemTarea = ({ tarea, borrarTarea }) => {
 };
 
 export default ItemTarea;
+// prueba
