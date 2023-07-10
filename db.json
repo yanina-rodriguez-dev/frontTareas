@@ -1,0 +1,9 @@
+{
+    "tareas": [
+      { "id": 1, "nombreTarea": "Hacer ejercicio", "descripcionTarea": "ALGUNA DESCRIPCION" }
+    ],
+    "usuarios": [
+      { "id": 1, "nombreUsuario": "admin", "email": "admin@rollingcode.com", "password":"123456aA" }
+    ]
+
+  }
