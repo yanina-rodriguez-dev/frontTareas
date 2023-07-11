@@ -8,6 +8,7 @@ const FormularioTarea = () => {
   const [tarea, setTarea] = useState("");
   const [tareas, setTareas] = useState(tareasDelLocalStorage);
 
+  
   useEffect(() => {
     localStorage.setItem("listaTareas", JSON.stringify(tareas));
   }, [tareas]);

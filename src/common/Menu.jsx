@@ -1,6 +1,13 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
+import { Link, NavLink, useNavigate} from "react-router-dom";
 
-const Menu = () => {
+const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
+  const navegacion = useNavigate();
+  const cerrarSesion = ()=>{
+    sessionStorage.removeItem('usuario');
+    setUsuarioLogueado({});
+    navegacion('/')
+  }
   return (
     <Navbar bg="danger" variant="dark" expand="lg">
     <Container>
