@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import FormularioTareas from "./producto/FormularioTareas"
 import { obtenerListaTareas } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { useState } from "react";
+
 
 const Administrador = () => {
  const [productos, setProductos] = useState([]);
