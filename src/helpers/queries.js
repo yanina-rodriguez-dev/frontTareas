@@ -79,3 +79,13 @@ export const borrarTarea =async ( id)=>{
         console.log(error)
     }
 }
+
+export const obtenerTarea = async (id)=>{
+    try{
+     const respuesta = fetch(URL_producto + '/' + id);
+     const tarea = await respuesta.json();
+     return tarea ;
+    }catch{
+        console.log(error)
+    }
+}
