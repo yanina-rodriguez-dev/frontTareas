@@ -1,9 +1,28 @@
 {
-    "tareas": [
-      { "id": 1, "nombreTarea": "Hacer ejercicio", "descripcionTarea": "ALGUNA DESCRIPCION" }
-    ],
-    "usuarios": [
-      { "id": 1, "nombreUsuario": "admin", "email": "admin@rollingcode.com", "password":"123456aA" }
-    ]
-
-  }
+  "tareas": [
+    {
+      "id": 1,
+      "nombreTarea": "Hacer ejercicio",
+      "descripcionTarea": "ALGUNA DESCRIPCION"
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "nombreTarea": "Hacer ejercicio",
+      "descripcionTarea": "ALGUNA DESCRIPCION",
+      "id": 4
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombreUsuario": "admin",
+      "email": "admin@rollingcode.com",
+      "password": "123456aA"
+    }
+  ]
+}

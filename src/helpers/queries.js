@@ -31,3 +31,51 @@ export const obtenerListaTareas = async ()=>{
         console.log(error)
     }
 }
+
+export const crearTarea =async (tarea)=>{
+    try{
+       const respuesta = await fetch(URL_producto,{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(tarea)
+       });
+
+     return respuesta;
+
+    }catch(error){
+        console.log(error)
+    }
+}
+
+export const ceditarTarea =async (tarea, id)=>{
+    try{
+       const respuesta = await fetch(URL_producto + '/' + id,{
+        method:"PUT",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(tarea)
+       });
+
+     return respuesta;
+
+    }catch(error){
+        console.log(error)
+    }
+}
+
+export const borrarTarea =async ( id)=>{
+    try{
+       const respuesta = await fetch(URL_producto + '/' + id,{
+        method:"DELETE",
+       
+       });
+
+     return respuesta;
+
+    }catch(error){
+        console.log(error)
+    }
+}
