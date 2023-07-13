@@ -10,6 +10,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ListaTareas from "./components/views/producto/ListaTareas";
 import { useState } from "react";
 import Error404 from "./components/views/Error404";
+import RutasProtegidas from "./routes/RutasProtegidas";
+import RutasAdministrador from "./routes/RutasAdministrador";
+
 
 function App() {
   const usuarioSessionStorage =
@@ -25,9 +28,12 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Inicio></Inicio>}></Route>
         <Route
-          exact
-          path="./administrador"
-          element={<Administrador></Administrador>}
+          path="./administrador/*"
+          element={
+        <RutasProtegidas>
+          <RutasAdministrador></RutasAdministrador>
+        </RutasProtegidas>
+          }
         ></Route>
         <Route
           exact

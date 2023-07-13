@@ -4,9 +4,14 @@ const ItemTarea = ({ tarea, borrarTarea }) => {
   return (
     <ListGroup.Item className="d-flex justify-content-between inputs">
       {tarea}
+      <div>
       <Button variant="danger" onClick={() => borrarTarea(tarea)}>
-       X
+       Borrar
       </Button>
+      <Button  className="ms-2" variant="warning">
+      Editar
+      </Button>
+      </div>
     </ListGroup.Item>
   );
 };
